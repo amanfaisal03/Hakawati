@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Hakawati</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='Hakawati-Photoroom.jpg') }}" alt="Al-Hakawati Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="{{ url_for('explore') }}">Explore</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('signup') }}">Sign Up</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Al-Hakawati</h1>
+            <h2>A Smart Platform for Personalized Educational Stories</h2>
+            <p>An interactive platform that helps mothers create personalized, educational, and engaging stories for their children using Generative AI.</p>
+        </div>
+        <img src="{{ url_for('static', filename='Hakawati.png') }}" alt="Hero Image" class="hero-image">
+    </section>
+
+    <section class="problem">
+        <div class="section-text">
+            <h3>The Problem We Solve</h3>
+            <p>Mothers struggle to find fun and effective ways to teach their children positive values and educational concepts.</p>
+            <div class="problem-stats">
+                <div class="stat">
+                    <span class="stat-number">85%</span>
+                    <span class="stat-text">of mothers face this challenge</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">60%</span>
+                    <span class="stat-text">struggle with time constraints</span>
+                </div>
+            </div>
+        </div>
+        <div class="section-image">
+            <img src="{{ url_for('static', filename='problem.png') }}" alt="Problem Illustration">
+        </div>
+    </section>
+    
+    <section class="solution">
+        <div class="section-text">
+            <h3>Our Solution: Al-Hakawati</h3>
+            <p>A smart platform that allows mothers to create custom stories in minutes using Generative AI.</p>
+            <ul class="solution-features">
+                <li>
+                    <span class="feature-icon"></span>
+                    <span class="feature-text">Easy-to-use interface</span>
+                </li>
+                <li>
+                    <span class="feature-icon"></span>
+                    <span class="feature-text">Educational and fun</span>
+                </li>
+                <li>
+                    <span class="feature-icon"></span>
+                    <span class="feature-text">Multiple story styles</span>
+                </li>
+                <li>
+                    <span class="feature-icon"></span>
+                    <span class="feature-text">Accessible on all devices</span>
+                </li>
+            </ul>
+        </div>
+        <div class="section-image">
+            <img src="{{ url_for('static', filename='solution.png') }}" alt="Solution Illustration">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Al-Hakawati. All rights reserved.</p>
+    </footer>
+</body>
+</html>

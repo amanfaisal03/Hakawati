@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='Hakawati-Photoroom.jpg') }}" alt="Al-Hakawati Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('explore') }}">Explore</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('signup') }}">Sign Up</a>
+        </div>
+    </header>
+
+    <!-- Motivational Bar -->
+    <section class="motivational-bar">
+        <h2>Choose Your Favorite Style and Start Creating!</h2>
+    </section>
+
+    <!-- Four Style Sections -->
+    <section class="explore-styles">
+        <div class="style-card">
+            <img src="{{ url_for('static', filename='3d.png') }}" alt="3D Style">
+            <h3>3D Style</h3>
+            <p>Three-dimensional stories that bring imagination to life!</p>
+        </div>
+        <div class="style-card">
+            <img src="{{ url_for('static', filename='cartoon.png') }}" alt="Cartoon Style">
+            <h3>Cartoon Style</h3>
+            <p>Colorful cartoon illustrations that captivate children's attention.</p>
+        </div>
+        <div class="style-card">
+            <img src="{{ url_for('static', filename='watercolor.png') }}" alt="Watercolor Style">
+            <h3>Watercolor Style</h3>
+            <p>Soft and artistic watercolor designs for a calming storytelling experience.</p>
+        </div>
+        <div class="style-card">
+            <img src="{{ url_for('static', filename='animation.png') }}" alt="Animation Style">
+            <h3>Animation Style</h3>
+            <p>Dynamic and interactive animated stories for an engaging experience.</p>
+        </div>
+    </section>
+</section>
+  <!-- Video Section -->
+  <div class="video-section">
+    <h3>Your Generated Story Video</h3>
+    <video id="storyVideo" controls>
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <input type="file" id="videoUpload" accept="video/*" onchange="loadVideo(event)">
+</div>
+
+<!-- Chatbot Section -->
+<div class="chatbot-section">
+    <h3>Go to start your story description...</h3>
+    <div class="chatbot-bar">
+        <input type="text" id="chatbotInput" placeholder="Descrip your story ..........">
+        <button onclick="sendMessage()">Run</button>
+    </div>
+</div>
+
+<script>
+    // وظيفة لإرسال الرسائل
+    function sendMessage() {
+        const input = document.getElementById('chatbotInput');
+        const message = input.value.trim();
+        if (message === '') return;
+
+        // هنا يمكنك إضافة كود لإرسال الرسالة إلى API الشات بوت
+        // واستقبال الرد وعرضه في مكان مناسب
+
+        console.log("Done ", message); // لأغراض الاختبار
+        input.value = ''; // مسح حقل الإدخال بعد الإرسال
+    }
+     // وظيفة لتحميل الفيديو
+     function loadVideo(event) {
+            const video = document.getElementById('storyVideo');
+            const file = event.target.files[0];
+            if (file) {
+                const fileURL = URL.createObjectURL(file);
+                video.src = fileURL;
+                video.style.display = 'block'; // إظهار الفيديو بعد التحميل
+            }
+        }
+    </script>
+<footer>
+    <p>&copy; 2025 Al-Hakawati. All rights reserved.</p>
+</footer>
+    
+</body>
+</html>
